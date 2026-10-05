@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英打遊戲版本二</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            background: white;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        img {
+            width: 500px;
+            max-width: 80%;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>英打遊戲版本二</h1>
+
+    <img src="keyboard.png" alt="英文鍵盤">
+
+    <button id="startButton">開始</button>
+
+    <audio id="beep1" src="beep.wav"></audio>
+    <audio id="beep2" src="beep.wav"></audio>
+
+    <script>
+        const button = document.getElementById("startButton");
+        const beep1 = document.getElementById("beep1");
+        const beep2 = document.getElementById("beep2");
+
+        button.addEventListener("click", function () {
+
+            beep1.currentTime = 0;
+            beep1.play();
+
+            setTimeout(function () {
+                beep2.currentTime = 0;
+                beep2.play();
+            }, 400);
+
+        });
+    </script>
+
+</body>
+</html>
